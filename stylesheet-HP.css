@@ -1,0 +1,63 @@
+.circular-img{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%
+}
+
+.circular-img, .icon-front img{
+    width: 100%;
+    height: auto;
+}
+
+.icon{
+    width: 200px;
+    height:200px;
+    cursor: pointer;
+}
+
+.icon-middle{
+    position: relative;
+    top: 150px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+}
+
+.icon-front, .icon-back{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform .6s linear;
+}
+
+.back-content{
+    color:black;
+    text-align: center;
+    vertical-align: middle;
+    width: 90%;
+}
+
+.icon-front{
+    transform: perspective(800px) rotateY(0deg);
+}
+.icon-back{
+    background: rbg(154, 163, 192);
+    border-radius: 50%;
+    background-color: aliceblue;
+    transform: perspective(800px) rotateY(180deg);
+}
+
+.icon:hover > .icon-front{
+    transform: perspective(800px) rotateY(-180deg);
+}
+
+.icon:hover > .icon-back{
+    transform: perspective(800px) rotateY(0deg);
+}
+
+body{
+    background-color: cornflowerblue;
+}
